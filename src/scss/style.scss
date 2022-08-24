@@ -1,0 +1,59 @@
+@use "sass:math";
+
+//fonts in base
+@import 'base/default.scss';
+@import "base/fonts";
+
+//utils
+@import "base/variables";
+
+//base
+@import "base/null";
+//utils
+@import "utils/common";
+@import "utils/animations";
+
+body {
+  // Скролл заблокирован
+  .lock {
+    overflow: hidden;
+    touch-action: none;
+  }
+  // Сайт загружен
+  .loaded & {
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+// Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  // Прижимаем footer
+  > main {
+    flex: 1 1 auto;
+  }
+  // Фикс для слайдеров
+  > * {
+    min-width: 0;
+  }
+}
+
+//components
+@import "components/btns";
+@import "components/modal";
+@import "components/menu-burger";
+
+//layout
+@import "layout/header";
+@import "layout/footer";
+//pages
+@import "pages/home";
+//themes
+
+//vendors
+@import "vendors/swiper";

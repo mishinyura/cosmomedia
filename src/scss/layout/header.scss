@@ -1,0 +1,283 @@
+.mouse-border{
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    transform: translate(-50%, -50%);
+    border: 1px solid $colorBlue;
+    border-radius: 100%;
+    background-color: transparent;
+    z-index: 100;
+    pointer-events: none;
+    transition: width .3s ease-in-out,
+                height .3s ease-in-out;
+}
+.cursor-active{
+    width: 60px;
+    height: 60px;
+}
+
+
+.header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 9;
+
+    &__container{
+        @extend %container;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+
+        @media (max-width: 768px) {
+            max-width: $mwMobile;
+        }
+
+        @media (max-width: 520px) {
+            padding: 0 10px;
+        }
+    }
+
+    &__link{
+        position: relative;
+        z-index: 10;
+    }
+
+    .burger{
+        position: relative;
+        display: none;
+        width: 20px;
+        height: 20px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        z-index: 10;
+
+        &:hover::before{
+            background-color: $colorBlue;
+        }
+
+        &:hover .burger__icon{
+            background-color: $colorBlue;
+        }
+
+        &:hover::after{
+            background-color: $colorBlue;
+        }
+
+        &::before{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 2px;
+            width: 16px;
+            background-color: #fff;
+            content: '';
+            transition: all .2s linear;
+        }
+
+        &__icon{
+            position: absolute;
+            top: 9px;
+            right: 0;
+            height: 2px;
+            width: 18px;
+            background-color: #fff;
+            transition: all .2s linear;
+        }
+
+        &::after{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 2px;
+            width: 20px;
+            background-color: #fff;
+            content: '';
+            transition: all .2s linear;
+        }
+
+        &-active::before{
+            width: 20px;
+            top: 9px;
+            transform: rotate(-45deg);
+        }
+
+        &-active span{
+            transform: scale(0);
+        }
+
+        &-active::after{
+            bottom: 9px;
+            transform: rotate(45deg);
+        }
+
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    .nav{
+
+        &__menu{
+            display: flex;
+
+            @media (max-width: 520px) {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        &__item{
+            flex-basis: 25%;
+            cursor: pointer;
+
+            &:hover .nav__link{
+                color: $colorBlue;
+            }
+
+            @media (max-width: 768px) {
+ 
+                &:not(:last-child){
+                    margin-right: 20px;
+                }
+            }
+
+            
+            @media (max-width: 520px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                &:not(:last-child){
+                    margin-right: 0;
+                }
+            }
+            
+        }
+
+        &__link{
+            display: inline-block;
+            padding: 15px 7px;
+            font-family: 'Code Next';
+            font-size: 13px;
+            font-style: normal;
+            line-height: 1.5;
+            font-weight: 500;
+            color: #fff;
+            transition: all .2s linear;
+
+            @media (max-width: 768px) {
+                padding: 0;
+                margin-bottom: 20px;
+                font-size: 15px;
+            }
+        }
+
+        .submenu{
+            position: absolute;
+            top: 100px;
+            width: 220px;
+            border-radius: 3px;
+            opacity: 0;
+            visibility: hidden;
+            background-color: $bgBrown;
+            transition: all .2s linear;
+
+            &-active{
+                top: 70px;
+                visibility: visible;
+                opacity: 1;
+            }
+
+            &__item{
+                position: relative;
+                overflow-x: hidden;
+                transition: all .2s linear;
+                &::before{
+                    position: absolute;
+                    top: 25px;
+                    left: -15px;
+                    height: 1px;
+                    width: 10px;
+                    background-color: $colorBlue;
+                    content: '';
+                    transition: all .2s linear;
+                }
+
+                &:hover::before{
+                    left: 0;
+                }
+
+                &:hover{
+                    padding-left: 15px;
+                }
+
+                &:hover .submenu__link{
+                    color: $colorBlue;
+                }
+
+                @media (max-width: 768px) {
+                    &::before{
+                        top: 15px;
+                    }
+                }
+
+            }
+
+            &__link{
+                display: inline-block;
+                padding: 15px 7px;
+                font-family: 'Code Next';
+                font-size: 13px;
+                font-style: normal;
+                line-height: 1.5;
+                font-weight: 500;
+                color: #fff;
+                transition: all .2s linear;
+                
+
+                @media (max-width: 768px) {
+                    padding: 8px 0;
+                    font-size: 10px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                position: static;
+                width: initial;
+                visibility: visible;
+                opacity: 1;
+            }
+
+            @media (max-width: 520px) {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: -700px;
+            width: 100%;
+            height: 320px;
+            padding: 90px 30px 30px;
+            background-color: $bgBrown;
+            transition: all .3s linear;
+
+            &-active{
+                top: 0;
+            }
+        }
+
+        @media (max-width: 520px) {
+            height: auto;
+        }
+    }
+    
+}

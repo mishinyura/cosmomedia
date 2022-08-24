@@ -1,0 +1,53 @@
+$mwDesktop: 1600px;
+$mwMobile: 680px;
+$colorBlue: #15778E;
+$colorLG: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+$bgBrown: #1B1D21; //#1B1D21   rgb(67, 50, 50)
+
+%container{
+    max-width: $mwDesktop;
+    margin: auto;
+    padding: 0 15px;
+}
+
+%h1Desktop{
+    font-family: 'P';
+    font-size: 90px;
+    font-weight: 900;
+    line-height: 1.4;
+    font-style: normal;
+}
+
+%btn{
+    padding: 15px 35px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Code Next';
+    font-weight: 400;
+    font-size: 13px;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &:hover{
+        background-color: #fff;
+        color: black;
+    }
+
+    &:active{
+        background-color: rgb(223, 236, 255);
+        border-color: rgb(223, 236, 255);
+    }
+}
+
+.color-font{
+    background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-font{
+    background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+}
