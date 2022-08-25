@@ -1,7 +1,7 @@
 const nav = document.querySelector('.nav'),
       menu = nav.querySelectorAll('.submenu'),
       navItem = nav.querySelectorAll('.nav__link'),
-      hero = document.querySelector('.hero');
+      main = document.querySelector('.main');
 
 function start(){
     if(document.body.offsetWidth > 768){
@@ -17,11 +17,12 @@ function start(){
         
         })
 
-        hero.addEventListener('click', () => {
+        main.onclick = () => {
             for(let i = 0; i < menu.length; i++){
                 menu[i].classList.remove('submenu-active')
             };
-        })
+        };
+        
 
     }
 }

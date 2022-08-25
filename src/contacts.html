@@ -7,7 +7,7 @@
 @@include('html/header.html',{})
     <main class="main">
         <section class="main__section hero" id="particles-js">
-            <div class="hero__container">
+            <div class="hero__container hero__container_contacts">
                 <h1 class="hero__title hero__title_contacts">
                     <span class="color-font">Let's talk about your project.</span>
                 </h1>
@@ -15,7 +15,6 @@
                     Feel free to ask me any question or let’s do to talk about our future collaboration.
                 </p>
             </div>
-            <span class="hero__line"></span>
         </section>
 
         <section class="main__section contacts">
@@ -27,9 +26,9 @@
                         </span>
                     </h2>
                     <form action="" class="contacts__form form">
-                        <input type="text" class="form__input" id="name">
-                        <input type="text" class="form__input" id="email">
-                        <textarea class="form__textarea" name="" id="" cols="30" rows="10"></textarea>
+                        <input type="text" class="form__input" id="name" placeholder="Name">
+                        <input type="text" class="form__input" id="email" placeholder="Email">
+                        <textarea class="form__textarea" name="" id="" cols="60" rows="5" placeholder="Message"></textarea>
                         <button class="form__btn">
                             Send Message
                         </button>

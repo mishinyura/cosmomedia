@@ -1,0 +1,119 @@
+.hero{
+    &__container_contacts{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title_contacts{
+        max-width: 800px;
+    }
+
+    &__descr{
+        font-family: 'Code Next';
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 2;
+        color: #a4a7b1;
+    }
+}
+
+
+.contacts{
+    padding: 150px 0;
+    background-color: black;
+
+    &__container{
+        @extend %container;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title{
+        margin-bottom: 60px;
+        font-family: 'Code Next';
+        font-size: 30px;
+        line-height: 1.4;
+        font-weight: 700;
+    }
+
+    &__callback{
+        flex-basis: 40%;
+    }
+
+    &__content{
+        flex-basis: 40%;
+    }
+
+    #Icons{
+        width: 40px;
+        height: 40px;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        &__input{
+            padding: 20px 0;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #a4a7b1;
+            font-family: 'Code Next';
+            font-size: 20px;
+            font-weight: 300;
+            color: #a4a7b1;
+            background-color: transparent;
+
+            &:nth-child(2){
+                margin-bottom: 40px;
+            }
+        }
+
+        &__textarea{
+            padding: 20px;
+            margin-bottom: 20px;
+            outline: none;
+            border: 1px solid #a4a7b1;
+            font-family: 'Code Next';
+            font-size: 20px;
+            font-weight: 300;
+            color: #a4a7b1;
+            background-color: transparent;
+        }
+
+        &__btn{
+            @extend %btn;
+            max-width: 250px;
+        }
+    }
+
+    &__address{
+        margin-bottom: 50px;
+    }
+
+    &__subtitle{
+        margin-bottom: 15px;
+        font-family: 'Code Next';
+        font-style: normal;
+        font-size: 20px;
+        font-weight: 500;
+        color: #fff;
+    }
+
+    &__link{
+        display: block;
+        margin-bottom: 10px;
+        font-family: 'Code Next';
+        font-style: normal;
+        font-size: 18px;
+        font-weight: 300;
+        color: #a4a7b1;
+
+        &:nth-child(3){
+            margin-bottom: 50px;
+        }
+    }
+
+    &__list{
+        display: flex;
+    }
+}
