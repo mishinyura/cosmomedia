@@ -14,6 +14,11 @@
         font-weight: 300;
         line-height: 2;
         color: #a4a7b1;
+
+        transition: transform .3s ease-in-out 30ms,
+                opacity .3s ease-in-out 30ms;
+        opacity: 0;
+        transform: translate(0, 50px);
     }
 }
 

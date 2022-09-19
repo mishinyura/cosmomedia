@@ -166,4 +166,32 @@
     &__link{
         color: #12c2e9;
     }
+    
+    &__btn-progress:hover .footer__ellipse{
+            transition: fill .3s ease-in-out;
+    }
+
+    &__btn-progress{
+        position: fixed;
+        right: 40px;
+        bottom: 40px;
+        width: 120px;
+        height: 120px;
+        background-color: transparent;
+        border: none;
+        border-radius: 100%;
+        z-index: 80;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all .4s linear;
+
+        &:hover .footer__ellipse{
+            fill: #12c2e959;
+        }
+    }
+}
+
+.progress-active{
+    opacity: 1;
+    transform: none;
 }

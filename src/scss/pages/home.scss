@@ -62,6 +62,11 @@
         font-weight: 800;
         color: #fff;
 
+        transition: transform .3s ease-in-out,
+                opacity .3s ease-in-out;
+        opacity: 0;
+        transform: translate(0, 50px);
+
         @media (max-width: 1024px) {
             font-size: 60px;
         }
@@ -137,9 +142,19 @@
         flex-direction: column;
         justify-content: space-between;
         flex-basis: 50%;
+
+        transition: transform .3s ease-in-out 30ms,
+                opacity .3s ease-in-out 30ms;
+        opacity: 0;
+        transform: translate(-200px, 0);
         
         &:not(:last-child){
             margin-right: 30px;
+
+            transition: transform .3s ease-in-out 30ms,
+                opacity .3s ease-in-out 30ms;
+            opacity: 0;
+            transform: translate(-200px, 0);
 
             @media (max-width: 520px) {
                 margin-right: 0;
@@ -192,6 +207,11 @@
         line-height: 1.5;
         color: #fff;
 
+        transition: transform .3s ease-in-out,
+                opacity .3s ease-in-out;
+        opacity: 0;
+        transform: translate(200px, 0);
+
         @media (max-width: 520px) {
             font-size: 35px;
         }
@@ -208,6 +228,11 @@
         font-weight: 300;
         line-height: 2;
         color: #a4a7b1;
+
+        transition: transform .3s ease-in-out 30ms,
+                opacity .3s ease-in-out 30ms;
+        opacity: 0;
+        transform: translate(200px, 0);
 
         @media (max-width: 520px) {
             font-size: 15px;
@@ -308,6 +333,10 @@
     .swiper {
         width: 100%;
         height: 100%;
+
+        &:hover .swiper__btn{
+            opacity: 1;
+        }
     }
 
     .swiper_slide{
@@ -315,6 +344,7 @@
     }
 
     .swiper__img{
+        width: 100%;
         height: 98%;
     }
 
@@ -364,6 +394,11 @@
 
     .swiper-slide.swiper-slide-active .swiper__text .swiper__descr{
         bottom: 0;
+    }
+
+    .swiper__btn{
+        opacity: 0;
+        transition: all .2s linear;
     }
       
 
@@ -433,6 +468,9 @@
 
     &__container{
         @extend %container;
+
+        transition: opacity .3s ease-in-out 50ms;
+        opacity: 0;
 
     }
 
@@ -673,6 +711,7 @@
     }
 
     &__item{
+        overflow: hidden;
         &:not(:last-child){
             margin-bottom: 60px;
         }
@@ -696,46 +735,44 @@
         width: 80%;
         background-color: rgb(48, 48, 48);
 
-        &_design{
-            &::before{
-                display: block;
-                position: relative;
-                height: 8px;
-                width: 90%;
-                background: $colorLG;
-                content: '';
-                transition: all .3s linear;
-            }
-
-            
+        &_design &-line{
+            display: block;
+            position: relative;
+            height: 8px;
+            width: 90%;
+            background: $colorLG;
+            content: '';
+            transition: all .8s linear 1s;
+            transform: translateX(-100%);
         }
 
-        &_dev{
-            &::before{
-                display: block;
-                position: relative;
-                height: 8px;
-                width: 80%;
-                background: $colorLG;
-                content: '';
-                transition: all .3s linear;
-            }
+        &_dev &-line{
+            display: block;
+            position: relative;
+            height: 8px;
+            width: 80%;
+            background: $colorLG;
+            content: '';
+            transition: all .8s linear 1s;
+            transform: translateX(-100%);
         }
 
         &-num{
             display: block;
             position: relative;
             padding: 5px;
-            top: -45px;
+            top: -37px;
             right: 60px;
             width: 55px;
-            height: 35px;
+            height: 30px;
             text-align: center;
             font-family: 'Code Next';
             font-size: 17px;
             font-weight: 300;
             background-color: rgb(48, 48, 48);
             color: #fff;
+            transition: all .8s linear 1s;
+            transform: translateX(-400%);
 
             &::after{
                 display: block;
@@ -765,6 +802,9 @@
     &__image{
         flex-basis: 49%;
         margin-bottom: 20px;
+
+        transition: transform .3s ease-in-out 30ms;
+        transform: scaleY(0);
     }
 
     &__img{
@@ -777,10 +817,49 @@
 
 
 // ||||||||||||||||||||||||||||||
-//|||||||||||||||||||||||||||||||
+//|||||||||||||||||||||||||||||||presentation
+.presentation{
+    padding: 40px 0;
+    background-color: #18191D;
 
+    &__container{
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
 
+    &__slider{
+        min-width: 0;
+    }
 
+    &__btns{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        right: auto;
+        width: 100px;
+        height: 100px;
+        border: 2px solid #333;
+        border-radius: 100%;
+        background-color: #a4a7b1;
+        z-index: 10;
+    }
+
+    &__btn{
+        left: 35% !important;
+        right: 45% !important;
+        transform: rotate(90deg);
+    }
+
+    &__pag{
+        position: absolute;
+        left: 40% !important;
+    }
+}
+
+.swiper-button-prev{
+    bottom: 0;
+}
 
 
 // ||||||||||||||||||||||||||||||
@@ -809,23 +888,53 @@
         text-transform: uppercase;
         letter-spacing: 4px;
         color: #12c2e9;
+
+        transition: transform .3s ease-in-out,
+                opacity .3s ease-in-out;
+        opacity: 0;
+        transform: translate(-200px, 0);
     }
 
     &__descr{
         max-width: 600px;
         font-family: 'Cyrvetica';
         font-size: 70px;
-        font-weight: 800;
         text-transform: uppercase;
         color: #fff;
+        transition: transform .3s ease-in-out 50ms,
+                opacity .3s ease-in-out 50ms;
+        opacity: 0;
+        transform: translate(-200px, 0);
     }
 
     .bg-font{
-        font-family: 'Code Next'
+        font-family: 'Code Next';
+        font-weight: 800;
+        transition: transform .3s ease-in-out 80ms,
+                opacity .3s ease-in-out 80ms;
+        opacity: 0;
+        transform: translate(-400px, 0);
     }
 
     &__btn{
         @extend %btn;
         font-size: 18px;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.anim.anim-active{
+    opacity: 1;
+    transform: none;
 }

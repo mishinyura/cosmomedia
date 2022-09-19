@@ -8,7 +8,7 @@
   <main class="main">
     <section class="main__section hero" id="particles-js">
       <div class="hero__container">
-        <h1 class="hero__title">
+        <h1 class="hero__title anim anim-no-repeat">
           <span class="color-font">Разработка</span> и продвижения вашего <span class="color-font">сайта для бизнеса</span>
         </h1>
       </div>
@@ -17,7 +17,7 @@
     <section class="main__section about">
       <div class="about__container">
         <div class="about__pic">
-          <picture class="about__picture">
+          <picture class="about__picture anim">
             <img src="img/01.jpg" alt="" class="about__img">
             <div class="about__figcaption">
               <span class="about__num">
@@ -26,15 +26,15 @@
               Лет успешного опыта
             </div>
           </picture>
-          <picture class="about__picture">
+          <picture class="about__picture anim">
             <img src="img/02.jpg" alt="" class="about__img">
           </picture>
         </div>
         <div class="about__content">
-          <h2 class="about__title">
+          <h2 class="about__title anim">
             COSMO Media, компания, которой можно <span class="color-font">доверять</span>
           </h2>
-          <p class="about__descr">
+          <p class="about__descr anim">
             Наша компания веб-дизайна специализируется на&nbsp;профессиональном
             создании уникальных сайтов. Наша команда постоянно следит за
             появлением новых технологий, которые мы&nbsp;не&nbsp;боимся внедрять в
@@ -140,13 +140,13 @@
             </div>
           </div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev swiper__btn"></div>
+        <div class="swiper-button-next swiper__btn"></div>
       </div>
     </section>
 
     <section class="main__section services">
-      <div class="services__container">
+      <div class="services__container anim">
         <h2 class="services__title">
           Best Services
         </h2>
@@ -221,7 +221,7 @@
     <section class="main__section reviews">
       <div class="reviews__container">
         <div class="reviews__wrapper">
-          <div class="reviews__slider swiper-wrapper">
+          <div class="swiper-wrapper reviews__slider">
             <div class="reviews__slide swiper-slide">
               <div class="reviews__content">
                 <div class="reviews__user">
@@ -337,8 +337,6 @@
               </div>
             </div>
           </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
         </div>
       </div>
     </section>
@@ -362,7 +360,8 @@
                 UI / UX Design
               </span>
               <div class="team__progress team__progress_design">
-                <span class="team__progress-num">90%</span>
+                <span class="team__progress-line anim anim-no-repeat"></span>
+                <span class="team__progress-num anim anim-no-repeat">90%</span>
               </div>
             </li>
             <li class="team__item">
@@ -370,22 +369,23 @@
                 Apps Development
               </span>
               <div class="team__progress team__progress_dev">
-                <span class="team__progress-num">80%</span>
+                <span class="team__progress-line anim anim-no-repeat"></span>
+                <span class="team__progress-num anim anim-no-repeat">80%</span>
               </div>
             </li>
           </ul>
         </div>
         <div class="team__images">
-          <div class="team__image">
+          <div class="team__image anim">
             <img src="./img/1t.jpg" alt="" class="team__img">
           </div>
-          <div class="team__image">
+          <div class="team__image anim">
             <img src="./img/2t.jpg" alt="" class="team__img">
           </div>
-          <div class="team__image">
+          <div class="team__image anim">
             <img src="./img/3t.jpg" alt="" class="team__img">
           </div>
-          <div class="team__image">
+          <div class="team__image anim">
             <img src="./img/4t.jpg" alt="" class="team__img">
           </div>
         </div>
@@ -394,7 +394,7 @@
 
     <section class="main__section presentation">
       <div class="presentation__container">
-        <div class="presentation__slider slider">
+        <div class="presentation__slider first_slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img src="./img/4p.jpg" alt="" class="swiper__img">
@@ -406,20 +406,24 @@
               <img src="./img/6p.jpg" alt="" class="swiper__img">
             </div>
           </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
         </div>
-        <div class="pojects__slider slider">
+        <div class="presentation__slider second_slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="./img/4p.jpg" alt="" class="swiper__img">
+              <img src="./img/1p.jpg" alt="" class="swiper__img">
             </div>
             <div class="swiper-slide">
-              <img src="./img/5p.jpg" alt="" class="swiper__img">
+              <img src="./img/2p.jpg" alt="" class="swiper__img">
             </div>
             <div class="swiper-slide">
-              <img src="./img/6p.jpg" alt="" class="swiper__img">
+              <img src="./img/3p.jpg" alt="" class="swiper__img">
             </div>
+          </div>
+
+          <div class="presentation__btns">
+            <div class="swiper-button-prev presentation__btn"></div>
+            <div class="swiper-pagination presentation__pag"></div>
+            <div class="swiper-button-next presentation__btn"></div>
           </div>
         </div>
       </div>
@@ -428,12 +432,12 @@
     <section class="main__section callback" id="callback">
       <div class="callback__container">
         <div class="callback__content">
-          <h2 class="callback__title">
+          <h2 class="callback__title anim">
             Let’s Talk
           </h2>
-          <p class="callback__descr">
+          <p class="callback__descr anim">
             about your
-            <span class="bg-font">next project</span>.
+            <span class="bg-font anim">next project</span>.
           </p>
         </div>
         <button class="callback__btn">
@@ -442,7 +446,6 @@
       </div>
     </section>
   </main>
-  <div class="mouse-border"></div>
 @@include('html/footer.html',{})
 </body>
 
